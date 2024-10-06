@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class CreateStars : MonoBehaviour
 {
@@ -17,6 +19,10 @@ public class CreateStars : MonoBehaviour
     public void GenerateStars()
     {
         StreamReader reader = null;
+        string strCmdText;
+        strCmdText= "/K cd C:\\Users\\caban\\NasaSpaceAppChallenge\\Python & .venv\\Scripts\\activate & python gaiaquery.py 18_Del_b";
+
+        System.Diagnostics.Process.Start("CMD.exe",strCmdText);
         if (File.Exists(path))
         {
             reader = new StreamReader(File.OpenRead(path));
